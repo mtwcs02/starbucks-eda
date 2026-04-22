@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Starbucks Korea | Data Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Sidebar Navigation -->
+    <nav class="sidebar">
+        <div class="logo">
+            <i class="fa-solid fa-mug-hot"></i>
+            <span>STARBUCKS<br><small>DATA CENTER</small></span>
+        </div>
+        <ul class="nav-links">
+            <li class="active" data-target="dashboard"><i class="fa-solid fa-chart-pie"></i> 대시보드 홈</li>
+            <li data-target="map-view"><i class="fa-solid fa-map-location-dot"></i> 전국 매장 맵</li>
+            <li data-target="analytics"><i class="fa-solid fa-chart-line"></i> 상세 리포트 갤러리</li>
+        </ul>
+        <div class="user-profile">
+            <div class="avatar"><i class="fa-solid fa-user-tie"></i></div>
+            <div class="info">
+                <strong>Data Analyst</strong>
+                <span>Lead Role</span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="content">
+
+        <!-- Header -->
+        <header>
+            <div class="header-title">
+                <h1>전국 대시보드 <span>Overview</span></h1>
+                <p>2026 스타벅스 공간 비즈니스 모델 및 부동산 밀집도 인사이트</p>
+            </div>
+            <div class="header-actions">
+                <button class="btn-primary"><i class="fa-solid fa-download"></i> 리포트 다운로드</button>
+            </div>
+        </header>
+
+        <!-- KPI Cards -->
+        <section class="kpi-grid">
+            <div class="kpi-card glass">
+                <div class="icon"><i class="fa-solid fa-store"></i></div>
+                <div class="data">
+                    <p>총 전국 매장 수</p>
+                    <h2 class="counter" data-target="2134">0</h2>
+                </div>
+            </div>
+            <div class="kpi-card glass">
+                <div class="icon"><i class="fa-solid fa-city"></i></div>
+                <div class="data">
+                    <p>최다 밀집 지역 (서울)</p>
+                    <h2><span class="counter" data-target="683">0</span><small>개 점포</small></h2>
+                </div>
+            </div>
+            <div class="kpi-card glass">
+                <div class="icon"><i class="fa-solid fa-wheelchair"></i></div>
+                <div class="data">
+                    <p>휠체어 접근 가능 접근성</p>
+                    <h2>80<small>% 이상</small></h2>
+                </div>
+            </div>
+            <div class="kpi-card glass">
+                <div class="icon"><i class="fa-solid fa-mobile-screen"></i></div>
+                <div class="data">
+                    <p>사이렌 오더 지원</p>
+                    <h2>100<small>%</small></h2>
+                </div>
+            </div>
+        </section>
+
+        <!-- Dashboard Widgets -->
+        <div class="widgets-area">
+            
+            <!-- Map Viewer Section -->
+            <section class="widget large-widget glass" id="map-view">
+                <div class="widget-header">
+                    <h2><i class="fa-solid fa-earth-asia"></i> 스타벅스 전국 매장 분포 맵</h2>
+                    <span class="badge">Interactive</span>
+                </div>
+                <!-- Folium HTML Map Embed -->
+                <div class="map-container">
+                    <iframe src="starbucks_map.html" frameborder="0" width="100%" height="100%"></iframe>
+                </div>
+            </section>
+
+            <!-- Insight Gallery Section -->
+            <section class="widget full-widget glass" id="analytics">
+                <div class="widget-header">
+                    <h2><i class="fa-solid fa-magnifying-glass-chart"></i> 탐색적 데이터 차트 (EDA Gallery)</h2>
+                </div>
+                <div class="gallery-grid">
+                    <div class="gallery-item">
+                        <img src="images/sido_counts.png" alt="시도별 스타벅스 매장 수">
+                        <div class="overlay"><h4>시도별 집중도 (서울 압도적 1위)</h4></div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="images/gugun_counts.png" alt="구군별 스타벅스 매장 수">
+                        <div class="overlay"><h4>주요 오피스 지구 (강남/서초) 밀집</h4></div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="images/open_year_counts.png" alt="연도별 오픈 추이">
+                        <div class="overlay"><h4>팬데믹 구간 이후 출점 폭증</h4></div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="images/sido_open_year.png" alt="시도별 오픈 평균">
+                        <div class="overlay"><h4>지방 단위 신규 상권 이동 추세</h4></div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="images/store_area_pie.png" alt="매장 타입 분포">
+                        <div class="overlay"><h4>매장 레이아웃 형태 및 타입 비중</h4></div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="images/map_scatter.png" alt="위경도 산점도">
+                        <div class="overlay"><h4>거점 도시별 점증적 클러스터</h4></div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="images/wheelchair_sido.png" alt="지역별 휠체어석">
+                        <div class="overlay"><h4>환경 인프라 확충 (ESG 지표)</h4></div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="images/tfidf_keywords.png" alt="TF-IDF">
+                        <div class="overlay"><h4>DT & 역세권 & 리저브 지배적</h4></div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+    </main>
+
+    <!-- Modal Layer -->
+    <div class="modal" id="imageModal">
+        <button class="modal-close" id="closeModal">&times;</button>
+        <img id="modalImage" src="" alt="Zoomed Chart">
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
